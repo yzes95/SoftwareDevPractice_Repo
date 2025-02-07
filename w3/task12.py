@@ -49,7 +49,7 @@ from re import split
 import sys
 def left_align(width,numbers):
     for number in numbers:
-        print(f"{number:<{width}d}")
+        print(f"{int(number):<{width}d}")
 
 def main():
     try:
