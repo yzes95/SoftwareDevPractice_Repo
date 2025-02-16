@@ -10,7 +10,7 @@ import csv
 
 try:
     with open("test.txt") as file:
-        writer= csv.DictReader(file)
+        ...
 except FileNotFoundError:
     with open("test.txt","a") as file:
         writer= csv.DictWriter(file, fieldnames=["Cycle_No", "Total_Items_Produced", "Total_Working_Hours", \
