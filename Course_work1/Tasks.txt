@@ -1,0 +1,72 @@
+#the system operating hours are :
+    #everyday from 7am~5pm
+
+#requires an operator's input to start daily production  ---done
+
+#It will produce a set number of items per minute ---
+
+#######################################################################
+#requires a routine maintenance after a specified number of operating hours
+#######################################################################
+
+#once limit is reached a message will display as "Service Required" and it will show
+    #the total number of items produced and production hours since its last maintenance 
+
+#After maintenance, all production data will reset, and the cycle will be repeated.
+
+
+# Assume 1 hour to be equivalent to a single count 
+    # by the Python interpreter e.g. a count from 1 to 2 makes 1 hour
+
+#store the total operating hours in a .txt file and add it to prev hours 
+# and retrieve the value at the start of the next day’s operation
+#At the end of each day, it should update the total
+#  operating hours and store the updated valuein the .txt file
+
+#######################################################################
+#Include in the software a set value for the number of items that can be produced in a minute
+#(e.g., 10 items/minute). Assume that the system can operate in one of two modes, optimised
+#mode or full production mode. ---done
+#######################################################################
+
+#Items/minute would depend on the mode chosen by the
+#operator at the start of operation.
+#You can assume values for these ---done
+
+#The software should be able to store the total number of items produced in the same .txt file as
+#in requirement 3 above and retrieve the value at the start of the next day’s operation
+
+#It should be able to update the total number of items produced 
+# in the .txt file at the end of each day.
+
+#It should display the message 'Service Required' when the maximum limit of operating hours is
+#reached (a value can be assumed for this). It should also display the total number of items
+#produced and the total operating hours since the last maintenance
+
+#It should reset all production and operational data, including total items produced and
+#operating hours, to prepare for the next production cycle. It is assumed that the routine
+#maintenance has been completed at this point.
+
+
+"""
+Task A: Write a Python program that meets the above requirements for the conveyor belt system.
+Task B: Briefly describe each variable and function you have used in one sentence. The descriptions can
+be included as comments in your program.
+Task C: Requirements 10 and 12 are optional. Attempting them means you can get additional marks, but
+only proceed with them if you have successfully completed the main requirements above.
+"""
+
+""" 
+10. Assume that the conveyor belt will be used by 4 operators and only one of them operates it per
+day. Your software should keep track of the number of items produced by each operator and
+display their individual totals at the point of maintenance along with the other data in
+requirement 8 above.
+11. Update requirement 8 above so that the system counts down for exactly 5 seconds before it
+shuts down for maintenance. The 5 seconds should be real-time.
+12. Provide an option to show a log of production data for every maintenance done since the
+commissioning of the system.
+"""
+
+
+
+#We could ahve used os but since it it is used by many we shall avoid it
