@@ -1,1 +1,0 @@
-Cycle_No,Total_Items_Produced,Total_Working_Hours,Items_Produced_OP_Mode,Working_HRS_OP_Mode,Items_Produced_FP_Mode,Working_HRS_FP_Mode

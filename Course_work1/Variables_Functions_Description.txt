@@ -1,0 +1,69 @@
+===============================================
+VARIABLES TABLE
+===============================================
+| Variable                             | Function(s)                                       | Description                                                                       |
+|--------------------------------------|---------------------------------------------------|-----------------------------------------------------------------------------------|
+| working_hr_limit_per_cycle           | main()                                            | Maximum hours a single cycle can work before requiring maintenance (50 hours).    |
+| working_hr_limit_per_day             | main()                                            | Maximum working hours per day (10 hours).                                         |
+| tp_l_fn                              | main()                                            | Filename for total production log ("total_production_log.txt").                   |
+| sc_l_fn                              | main()                                            | Filename for single cycle log ("single_cycle_log.txt").                           |
+| items_produced_permin                | main()                                            | Default rate of items produced per minute (3 items/min).                          |
+| ratio                                | main()                                            | Ratio of full production to optimized production mode (2).                        |
+| mode                                 | main()                                            | Current production mode (Optimized/Full Production).                              |
+| modeFP                               | main()                                            | Flag to indicate Full Production mode (1 if FP, 0 otherwise).                     |
+| modeOP                               | main()                                            | Flag to indicate Optimized Production mode (1 if OP, 0 otherwise).                |
+| operator_names                       | main()                                            | List indicating which operator is active.                                         |
+| process_start_time                   | main()                                            | Timestamp when production starts, used for time tracking.                         |
+| scale                                | main()                                            | Scaling factor for testing (adjusting time measurement).                          |
+| Cycle_No                             | main(), process()                                 | Current cycle number.                                                             |
+| Day_No                               | main(), process()                                 | Current day number in the production cycle.                                       |
+| Total_Items_Produced                 | main(), process()                                 | Total items produced during the production cycle.                                 |
+| Total_Worked_Hours                   | main(), process()                                 | Total worked hours in the cycle.                                                  |
+| Items_Produced_OP_Mode               | main(), process()                                 | Number of items produced in Optimized Production mode.                            |
+| Worked_HRS_OP_Mode                   | main(), process()                                 | Total hours worked in Optimized Production mode.                                  |
+| Items_Produced_FP_Mode               | main(), process()                                 | Number of items produced in Full Production mode.                                 |
+| Worked_HRS_FP_Mode                   | main(), process()                                 | Total hours worked in Full Production mode.                                       |
+| Items_Produced_By_Ahmed              | main(), process()                                 | Number of items produced by Ahmed.                                                |
+| Items_Produced_By_Mohammed           | main(), process()                                 | Number of items produced by Mohammed.                                             |
+| Items_Produced_By_Mostafa            | main(), process()                                 | Number of items produced by Mostafa.                                              |
+| Items_Produced_By_Abd_EL_Rahman      | main(), process()                                 | Number of items produced by Abd_EL_Rahman.                                        |
+| store_0                              | process()                                         | Temporary variable to store last checked time.                                    |
+| Items_Produced                       | process()                                         | Number of items produced in the current cycle.                                    |
+| time_passed_in_hrs                   | process()                                         | Time passed since the process started (in hours).                                 |
+| time_passed                          | process()                                         | Time passed since process start (raw value from perf_counter()).                  |
+| updatedrow                           | process(), updating(), updating_sc()              | Dictionary storing updated production values to write to file.                    |
+| nextrow                              | appending(), appending_sc()                       | Dictionary storing next cycle/day default values.                                 |
+| wm                                   | mode_selection()                                  | User input for working mode ("op" or "fp").                                       |
+| id                                   | operator_selection()                              | User input for operator ID.                                                       |
+| operator                             | operator_selection()                              | Dictionary representing an operator's name and ID.                                |
+| welcoming_strs                       | operator_selection()                              | List of different welcome messages for operators.                                 |
+| operators_info                       | operator_selection()                              | List of all operators and their corresponding IDs.                                |
+| data                                 | check_exist_to_read_or_creat_and_read()           | Dictionary containing the latest data read from the log file.                     |
+| header                               | check_exist_to_read_or_creat_and_read()           | CSV header information from the log file.                                         |
+| header_checker                       | check_exist_to_read_or_creat_and_read()           | List of expected headers for validation.                                          |
+| checking_if_empty                    | check_exist_to_read_or_creat_and_read()           | Reads the first character of the file to check if it’s empty.                     |
+| reader                               | read(), check_exist_to_read_or_creat_and_read()   | CSV DictReader object used for reading files.                                     |
+| cycle_data                           | read()                                            | List containing all rows from the log file.                                       |
+| fieldnames                           | updating(), updating_sc()                         | List of field names used in the CSV file.                                         |
+| row                                  | updating(), updating_sc()                         | Each row from the CSV file being checked/updated.                                 |
+| appending                            | appending(), appending_sc()                       | CSV DictWriter object used for writing new rows.                                  |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+===============================================
+FUNCTIONS TABLE
+===============================================
+| Function Name                                   | Description                                                                                                             |
+|-------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| main()                                          | Controls the overall process: takes arguments, sets up production modes, and calls the process() function.              |
+| operator_selection()                            | Prompts user to enter an ID and validates it against a list of predefined operators, returning an active operator list. |
+| mode_selection()                                | Asks the user to choose between "Optimized" or "Full Production" mode.                                                  |
+| production_rate(mode, ratio)                    | Determines production rates based on the chosen mode and ratio.                                                         |
+| check_exist_to_read_or_creat_and_read(filename) | Checks if a log file exists; if not, creates it with default values, then reads the last recorded entry.                |
+| create_files(filename)                          | Creates a new CSV file with proper headers and default values.                                                          |
+| read(filename)                                  | Reads the last entry from a CSV file and returns it as a dictionary.                                                    |
+| process(...)                                    | Simulates the production process, tracking time, updating production counts, and ensuring cycle limits are followed.    |
+| printing(updatedrow)                            | Prints a well-formatted table of production data.                                                                       |
+| updating(updatedrow, filename, Cycle_No)        | Updates an existing entry in the total production log file.                                                             |
+| updating_sc(updatedrow, filename, No)           | Updates an existing entry in the single-cycle log file.                                                                 |
+| appending(filename, Cycle_No)                   | Appends a new row to the total production log file when a new cycle starts.                                             |
+| appending_sc(filename2, Cycle_No, Day_No)       | Appends a new row to the single-cycle log file when a new day starts.                                                   |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
