@@ -1,8 +1,6 @@
 import sys
 from time import perf_counter, sleep
 import csv
-
-# import pandas as pd
 from random import choice
 
 
@@ -21,7 +19,7 @@ def main():
     ratio = 2
     try:
         # taking the start command from the user from the arguments when he run the file as sys arguments
-        if len(sys.argv) == 2 and sys.argv[1] == "OpenSesame":
+        if len(sys.argv) == 2 and sys.argv[1].lower() == "opensesame":
             # here it will return the items produced per min rate
             # and mode where mode is either 0 or ratio value
             mode, modeFP, modeOP = production_rate(mode_selection(), ratio)

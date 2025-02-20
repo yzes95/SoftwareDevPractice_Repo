@@ -1,3 +1,2 @@
 Cycle_No,Day_No,Total_Items_Produced,Total_Worked_Hours,Items_Produced_OP_Mode,Worked_HRS_OP_Mode,Items_Produced_FP_Mode,Worked_HRS_FP_Mode,Items_Produced_By_Ahmed,Items_Produced_By_Mohammed,Items_Produced_By_Mostafa,Items_Produced_By_Abd_EL_Rahman
-1,3,9000,25,0,0,9000,25,0,5400,0,3600
-2,1,0,0,0,0,0,0,0,0,0,0
+1,1,3600,10,0,0,3600,10,0,0,0,3600

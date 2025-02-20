@@ -2,7 +2,8 @@
 
 ## Overview
 
-This Python script is designed to simulate and track a production system. It logs production cycles, tracks operator activities, and ensures that operational limits (daily and per cycle) are maintained. Data is stored in CSV format for tracking and future analysis.
+This Python script is designed to simulate and track a production system. It logs production cycles, tracks operator activities, and ensures that operational limits (daily and per cycle) are maintained. Data is stored in CSV format in txt files for tracking and future analysis.Also,since the txt files are in csv format they can be opened using excel for better columnshead to data alignment or
+you can just change the files extension in the "dotpyfile.py" to xls instead of txt.
 
 ## Features
 
@@ -28,11 +29,12 @@ This Python script is designed to simulate and track a production system. It log
 To start the production process, use the following command in your terminal:
 
 ```sh
-python script.py OpenSesame
+python script.py OpenSesame 
 ```
 
 - `OpenSesame` is a required argument. Without it, the script will not start.
 - If an incorrect argument is provided, an error message will be displayed.
+- It is case insenstive
 
 ### 2. Operator Login
 
@@ -45,6 +47,7 @@ Enter your ID:
 - The system validates the ID against the predefined operator records.
 - If the ID is correct, you will see a welcome message.
 - If the ID is incorrect, you will be prompted to enter it again.
+- Current IDs Registered are : (1452,1474,1232,1595)
 
 ### 3. Selecting Production Mode
 
